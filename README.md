@@ -22,6 +22,8 @@ This is a personal project made using ReactJS and NodeJS, getting data from the 
 First you need to clone the API repo to your desktop, run `npm install` to install de depencencies and then `npm start` to run the server.
 The Node server will be running at localhost:8080.
 
+[Albion Online Middle API](https://github.com/Xandyhoss/albion-middle-api)
+
 Now you can clone this repo to your desktop.
 
 ---
