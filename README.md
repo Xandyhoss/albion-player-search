@@ -30,7 +30,8 @@ Now you can clone this repo to your desktop.
 ## Usage
 
 After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+Create a file named .env.local and copy the following line to that: VITE_APP_URL=http://localhost:8080.
 
-Once the dependencies are installed, you can run `npm start` to start the application. You will then be able to access it at localhost:5173
+Once the dependencies are installed and the .env.local set up, you can run `npm start` to start the application. You will then be able to access it at localhost:5173
 
 ---
