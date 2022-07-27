@@ -1,6 +1,6 @@
 import axios from "../utils/axios";
 import { AxiosError } from "axios";
-import { CaretDoubleLeft } from "phosphor-react";
+import { CaretDoubleLeft, Scroll } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CombatList } from "./CombatList";
@@ -56,6 +56,7 @@ export function PlayerInfo(props: PropsType) {
               className="absolute left-[25px] md:left-[55px] 2xl:left-[65px]"
               size={30}
             />
+            <Scroll size={25} />
             <p className="text-2xl font-serif">PLAYER INFO </p>
           </div>
           <div className="grid grid-cols-[1fr] md:grid-cols-[1fr_1fr] gap-2 p-3 w-full md:w-[95%] md:min-w-[850px] md:max-w-[1100px]">

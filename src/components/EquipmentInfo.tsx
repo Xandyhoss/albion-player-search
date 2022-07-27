@@ -1,3 +1,4 @@
+import { Skull, Sword } from "phosphor-react";
 import { Equipment, Item } from "../utils/types";
 
 type PropsType = {
@@ -8,6 +9,7 @@ type PropsType = {
 };
 
 export function EquipmentInfo(props: PropsType) {
+  //Set equipment from props
   const bag = props.equipment.Bag ? (props.equipment.Bag as Item) : null;
   const head = props.equipment.Head ? (props.equipment.Head as Item) : null;
   const cape = props.equipment.Cape ? (props.equipment.Cape as Item) : null;
@@ -34,20 +36,22 @@ export function EquipmentInfo(props: PropsType) {
       <p className="text-black text-xl mb-2">{props.name}</p>
       <div className="w-full h-full bg-gray-300">
         <div className="bg-orange-500 w-full h-7 flex justify-center items-center">
-          <p className="text-xl font-serif">
-            {props.type == "killer"
-              ? "KILLER'S EQUIPMENT"
-              : "VICTIM'S EQUIPMENT"}
-          </p>
+          {props.type == "killer" ? (
+            <>
+              <Sword size={20} />
+              <p className="text-xl font-serif">KILLER'S EQUIPMENT</p>
+            </>
+          ) : (
+            <>
+              <Skull size={20} />
+              <p className="text-xl font-serif">VICTIM'S EQUIPMENT</p>
+            </>
+          )}
         </div>
         <div className="grid grid-cols-[repeat(3,_minmax(0,90px))] grid-rows-[repeat(4,_minmax(0,90px))] justify-center my-5 gap-2">
           <div className="bg-gray-400 flex justify-center items-center">
             {bag != null ? (
-              <img
-                src={`${renderer}${(bag as Item).Type}.png?quality=${
-                  (bag as Item).Quality
-                }`}
-              />
+              <img src={`${renderer}${bag.Type}.png?quality=${bag.Quality}`} />
             ) : (
               "EMPTY"
             )}
@@ -55,9 +59,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {head != null ? (
               <img
-                src={`${renderer}${(head as Item).Type}.png?quality=${
-                  (head as Item).Quality
-                }`}
+                src={`${renderer}${head.Type}.png?quality=${head.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -66,9 +68,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {cape != null ? (
               <img
-                src={`${renderer}${(cape as Item).Type}.png?quality=${
-                  (cape as Item).Quality
-                }`}
+                src={`${renderer}${cape.Type}.png?quality=${cape.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -77,9 +77,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {mainHand != null ? (
               <img
-                src={`${renderer}${(mainHand as Item).Type}.png?quality=${
-                  (mainHand as Item).Quality
-                }`}
+                src={`${renderer}${mainHand.Type}.png?quality=${mainHand.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -88,9 +86,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {armor != null ? (
               <img
-                src={`${renderer}${(armor as Item).Type}.png?quality=${
-                  (armor as Item).Quality
-                }`}
+                src={`${renderer}${armor.Type}.png?quality=${armor.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -99,9 +95,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {offHand != null ? (
               <img
-                src={`${renderer}${(offHand as Item).Type}.png?quality=${
-                  (offHand as Item).Quality
-                }`}
+                src={`${renderer}${offHand.Type}.png?quality=${offHand.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -110,9 +104,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {potion != null ? (
               <img
-                src={`${renderer}${(potion as Item).Type}.png?quality=${
-                  (potion as Item).Quality
-                }`}
+                src={`${renderer}${potion.Type}.png?quality=${potion.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -121,9 +113,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {shoes != null ? (
               <img
-                src={`${renderer}${(shoes as Item).Type}.png?quality=${
-                  (shoes as Item).Quality
-                }`}
+                src={`${renderer}${shoes.Type}.png?quality=${shoes.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -132,9 +122,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 flex justify-center items-center">
             {food != null ? (
               <img
-                src={`${renderer}${(food as Item).Type}.png?quality=${
-                  (food as Item).Quality
-                }`}
+                src={`${renderer}${food.Type}.png?quality=${food.Quality}`}
               />
             ) : (
               "EMPTY"
@@ -143,9 +131,7 @@ export function EquipmentInfo(props: PropsType) {
           <div className="bg-gray-400 col-start-2 col-end-3 flex justify-center items-center">
             {mount != null ? (
               <img
-                src={`${renderer}${(mount as Item).Type}.png?quality=${
-                  (mount as Item).Quality
-                }`}
+                src={`${renderer}${mount.Type}.png?quality=${mount.Quality}`}
               />
             ) : (
               "EMPTY"

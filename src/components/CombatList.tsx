@@ -1,3 +1,4 @@
+import { Skull, Sword } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
 import { Kill, Death } from "../utils/types";
 
@@ -15,9 +16,15 @@ export function CombatList(props: PropsType) {
         <div>
           <div className="bg-orange-500 h-10 flex items-center justify-center mb-1">
             {props.type == "kill" ? (
-              <p className="font-serif text-xl">LAST KILLS</p>
+              <>
+                <Sword size={20} />
+                <p className="font-serif text-xl">LAST KILLS</p>
+              </>
             ) : (
-              <p className="font-serif text-xl">LAST DEATHS</p>
+              <>
+                <Skull size={20} />
+                <p className="font-serif text-xl">LAST DEATHS</p>
+              </>
             )}
           </div>
           {props.data.map((item, index) => {
@@ -27,7 +34,7 @@ export function CombatList(props: PropsType) {
                 onClick={() => navigate(`/event/${item.eventId}`)}
                 className="bg-white h-10 flex items-center justify-center mb-1 hover:bg-gray-200 transition-colors"
               >
-                <p className="text-black text-[1.2rem]">
+                <p className="text-black text-[1.1rem]">
                   {props.type == "kill"
                     ? (item as Kill).victmin
                     : (item as Death).killer}{" "}
