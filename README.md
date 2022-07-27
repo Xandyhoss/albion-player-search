@@ -1,6 +1,6 @@
 # Albion Online Player Search
 
-[![GitHub Stars](https://img.shields.io/github/stars/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/issues) [![Live Demo](https://img.shields.io/badge/live-demo-green)](https://github.com/Xandyhoss/albion-player-search)
+[![GitHub Stars](https://img.shields.io/github/stars/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/issues) [![Live Demo](https://img.shields.io/badge/live-demo-green)](https://albion-player-search.vercel.app/)
 
 This is a personal project made using ReactJS and NodeJS, getting data from the Albion Online public API. In this application you can get various informations about players in Albion Online, such as total experience, guild, alliance, gathering and kill reports.
 
@@ -20,7 +20,7 @@ This is a personal project made using ReactJS and NodeJS, getting data from the 
 
 ## Setup
 
-First you need to clone the API repo to your desktop ([Albion Online Middle API](https://github.com/Xandyhoss/albion-middle-api)), run `npm install` to install de depencencies and then `npm start` to run the server.
+First you need to clone the API repo to your desktop ([Albion Online Middle API](https://github.com/Xandyhoss/albion-middle-api)), run `npm install` to install the depencencies and then `npm start` to run the server.
 The Node server will be running at localhost:8080.
 
 Now you can clone this repo to your desktop.
