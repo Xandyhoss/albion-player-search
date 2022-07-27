@@ -1,16 +1,8 @@
 import { useNavigate } from "react-router-dom";
-
-interface Player {
-  name: string;
-  guild: string;
-  alliance: string;
-  pvpFame: number;
-  ratio: number;
-  id: string;
-}
+import { PlayerBasic } from "../utils/types";
 
 type PropsType = {
-  players: Player[];
+  players: PlayerBasic[];
 };
 
 export function PlayerTable(props: PropsType) {
@@ -25,10 +17,16 @@ export function PlayerTable(props: PropsType) {
           <th scope="col" className="font-normal py-1 px-6">
             NAME
           </th>
-          <th scope="col" className="font-normal py-1 px-6 hidden md:table-cell">
+          <th
+            scope="col"
+            className="font-normal py-1 px-6 hidden md:table-cell"
+          >
             GUILD
           </th>
-          <th scope="col" className="font-normal py-1 px-6 hidden md:table-cell">
+          <th
+            scope="col"
+            className="font-normal py-1 px-6 hidden md:table-cell"
+          >
             ALLIANCE
           </th>
           <th scope="col" className="font-normal py-1 px-6">
@@ -48,9 +46,13 @@ export function PlayerTable(props: PropsType) {
               className="hover:bg-gray-300 hover:bg-opacity-90 transition-colors"
             >
               <td className="p-[0.4rem]">{player.name}</td>
-              <td className="p-[0.4rem] hidden md:table-cell">{player.guild ? player.guild : "--"}</td>
-              <td className="p-[0.4rem] hidden md:table-cell">{player.alliance ? player.alliance : "--"}</td>
-              <td>{player.pvpFame.toLocaleString('pt-BR')}</td>
+              <td className="p-[0.4rem] hidden md:table-cell">
+                {player.guild ? player.guild : "--"}
+              </td>
+              <td className="p-[0.4rem] hidden md:table-cell">
+                {player.alliance ? player.alliance : "--"}
+              </td>
+              <td>{player.pvpFame.toLocaleString("pt-BR")}</td>
               <td>{player.ratio}</td>
             </tr>
           );

@@ -4,64 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { EquipmentInfo } from "./EquipmentInfo";
 import { useEffect, useState } from "react";
 import { AxiosError } from "axios";
+import { Equipment, Event } from "../utils/types";
 
 type PropsType = {
   event: string;
   isLoading: Function;
-};
-
-interface Event {
-  killFame: number;
-  timestamp: string;
-  killerName: string;
-  killerIp: number;
-  killerEquipment: Equipment;
-  victimName: string;
-  victimIp: number;
-  victimEquipment: Equipment;
-}
-
-type Equipment = {
-  MainHand: {
-    Type: string;
-    Quality: number;
-  };
-  OffHand: {
-    Type: string;
-    Quality: number;
-  };
-  Head: {
-    Type: string;
-    Quality: number;
-  };
-  Armor: {
-    Type: string;
-    Quality: number;
-  };
-  Shoes: {
-    Type: string;
-    Quality: number;
-  };
-  Bag: {
-    Type: string;
-    Quality: number;
-  };
-  Cape: {
-    Type: string;
-    Quality: number;
-  };
-  Mount: {
-    Type: string;
-    Quality: number;
-  };
-  Potion: {
-    Type: string;
-    Quality: number;
-  };
-  Food: {
-    Type: string;
-    Quality: number;
-  };
 };
 
 export function KillDetails(props: PropsType) {
@@ -112,7 +59,9 @@ export function KillDetails(props: PropsType) {
               <p className="text-red-800 text-2xl font-bold mt-[-10px]">
                 {event.killFame.toLocaleString("pt-BR")}
               </p>
-              <p className="text-black text-[1rem] font-bold mt-0 md:mt-4">DATE</p>
+              <p className="text-black text-[1rem] font-bold mt-0 md:mt-4">
+                DATE
+              </p>
               <p className="text-gray-500 text-[1rem] font-bold mt-[-5px]">
                 {event.timestamp}
               </p>

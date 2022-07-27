@@ -2,26 +2,18 @@ import { useState, FormEvent, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PlayerTable } from "./PlayerTable";
 import axios from "./../utils/axios";
+import { PlayerBasic } from "../utils/types";
 
 type PropsType = {
   isLoading: Function;
 };
-
-interface Player {
-  name: string;
-  guild: string;
-  alliance: string;
-  pvpFame: number;
-  ratio: number;
-  id: string;
-}
 
 export function Search(props: PropsType) {
   const navigate = useNavigate();
 
   const { name } = useParams<{ name: string }>();
 
-  const [players, setPlayers] = useState<Player[]>([]);
+  const [players, setPlayers] = useState<PlayerBasic[]>([]);
   const [showError, setShowError] = useState(false);
   const [searchName, setSearchName] = useState("");
 
@@ -52,9 +44,9 @@ export function Search(props: PropsType) {
   useEffect(() => {
     if (name) {
       parseData(name);
-      setSearchName(name)
+      setSearchName(name);
     } else {
-      navigate('/')
+      navigate("/");
     }
   }, []);
 

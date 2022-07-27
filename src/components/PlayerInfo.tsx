@@ -7,62 +7,15 @@ import { CombatList } from "./CombatList";
 import { GatheringFame } from "./GatheringFame";
 import { PlayerInfoField } from "./PlayerInfoField";
 import { PveFamePerArea } from "./PveFamePerArea";
+import { Kill, Death, PlayerDetails } from "../utils/types";
 
 type PropsType = {
   id: string;
   isLoading: Function;
 };
 
-interface Player {
-  name: string;
-  guild: string;
-  alliance: string;
-  pvpFame: number;
-  ratio: number;
-  id: string;
-  pveFame: {
-    Total: number;
-    Royal: number;
-    Outlands: number;
-    Avalon: number;
-    Hellgate: number;
-    CorruptedDungeon: number;
-  };
-  gatheringFame: {
-    Fiber: {
-      Total: number;
-    };
-    Hide: {
-      Total: number;
-    };
-    Ore: {
-      Total: number;
-    };
-    Rock: {
-      Total: number;
-    };
-    Wood: {
-      Total: number;
-    };
-  };
-}
-
-interface Kill {
-  eventId: number;
-  victmin: string;
-  killFame: number;
-  timestamp: Date;
-}
-
-interface Death {
-  eventId: number;
-  killer: string;
-  killFame: number;
-  timestamp: Date;
-}
-
 export function PlayerInfo(props: PropsType) {
-  const [player, setPlayer] = useState<Player>();
+  const [player, setPlayer] = useState<PlayerDetails>();
   const [kills, setKills] = useState<Kill[]>();
   const [deaths, setDeaths] = useState<Death[]>();
 

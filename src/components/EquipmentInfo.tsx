@@ -1,26 +1,10 @@
+import { Equipment, Item } from "../utils/types";
+
 type PropsType = {
   equipment: Equipment;
   type: "killer" | "victim";
   name: string;
   ip: number;
-};
-
-type Item = {
-  Type: string;
-  Quality: number;
-};
-
-type Equipment = {
-  MainHand: Item;
-  OffHand: Item;
-  Head: Item;
-  Armor: Item;
-  Shoes: Item;
-  Bag: Item;
-  Cape: Item;
-  Mount: Item;
-  Potion: Item;
-  Food: Item;
 };
 
 export function EquipmentInfo(props: PropsType) {

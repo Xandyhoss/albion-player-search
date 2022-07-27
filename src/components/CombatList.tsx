@@ -1,23 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { Kill, Death } from "../utils/types";
 
 type PropsType = {
   type: "kill" | "death";
   data: Kill[] | Death[];
 };
-
-interface Kill {
-  eventId: number;
-  victmin: string;
-  killFame: number;
-  timestamp: Date;
-}
-
-interface Death {
-  eventId: number;
-  killer: string;
-  killFame: number;
-  timestamp: Date;
-}
 
 export function CombatList(props: PropsType) {
   const navigate = useNavigate();
