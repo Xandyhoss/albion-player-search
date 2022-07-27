@@ -14,7 +14,7 @@ export function Main() {
   return (
     <>
       {loading && <Loading />}
-      <div className="min-h-screen bg-cover bg-no-repeat bg-albion bg-center grid grid-rows-[auto_1fr] p-10 justify-items-center">
+      <div className="min-h-screen bg-cover bg-no-repeat bg-albion bg-center grid grid-rows-[auto_1fr] md:p-10 p-5 justify-items-center">
         <img className=" w-auto z-0" src={logo}></img>
         <div className="min-h-full min-w-full flex flex-col justify-center">
           {id && <PlayerInfo id={id} isLoading={setLoading}/>}

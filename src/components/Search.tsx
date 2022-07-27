@@ -63,14 +63,14 @@ export function Search(props: PropsType) {
       <form className="w-full flex justify-center" onSubmit={handleForm}>
         <input
           type="text"
-          className="w-[45%] h-9 pl-4 text-gray-700"
+          className="w-full md:w-[45%] h-9 pl-4 text-gray-700"
           placeholder="TYPE AN USERNAME TO SEARCH"
           value={searchName}
           onChange={(e) => setSearchName(e.target.value)}
         />
         <button
           type="submit"
-          className="w-[5%] h-9 bg-orange-500 text-[1.3rem]"
+          className="w-[15%] md:w-[5%] h-9 bg-orange-500 text-[1.3rem]"
         >
           GO!
         </button>

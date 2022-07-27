@@ -13,7 +13,7 @@ export function PveFamePerArea(props: PropsType) {
       <div className="bg-orange-500 flex justify-center items-center py-1 w-full mt-4">
         <p className="text-2xl font-serif">PVE FAME PER AREA(%)</p>
       </div>
-      <div className="grid grid-cols-[repeat(5,_1fr)] gap-1">
+      <div className="grid grid-cols-[1fr_1fr] md:grid-cols-[repeat(5,_1fr)] gap-1">
         <div className="flex flex-col mt-1">
           <div className="w-full flex justify-center items-center bg-orange-500 h-10">
             <p className="text-[1rem] font-serif">ROYAL</p>
