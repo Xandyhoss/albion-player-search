@@ -35,9 +35,11 @@ interface Event {
   timestamp: string;
   killerName: string;
   killerIp: number;
+  killerId: string;
   killerEquipment: Equipment;
   victimName: string;
   victimIp: number;
+  victimId: string;
   victimEquipment: Equipment;
 }
 
@@ -84,4 +86,8 @@ interface PlayerBasic {
   id: string;
 }
 
+const renderer = `https://render.albiononline.com/v1/item/`;
+
 export type { Kill, Death, Item, Equipment, Event, PlayerDetails, PlayerBasic };
+
+export { renderer };

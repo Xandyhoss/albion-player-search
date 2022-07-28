@@ -53,6 +53,7 @@ export function KillDetails(props: PropsType) {
               equipment={event?.killerEquipment as Equipment}
               name={event.killerName}
               ip={event.killerIp}
+              id={event.killerId}
             />
             <div className="flex flex-col justify-center items-center mt-5 mb-5 md:mt-0 md:mb-0">
               <p className="text-black text-xl font-bold">KILL FAME</p>
@@ -71,6 +72,7 @@ export function KillDetails(props: PropsType) {
               equipment={event?.victimEquipment as Equipment}
               name={event.victimName}
               ip={event.victimIp}
+              id={event.victimId}
             />
           </div>
         </div>
