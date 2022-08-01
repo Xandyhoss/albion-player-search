@@ -15,7 +15,7 @@ export function VictimInventory(props: PropsType) {
           VICTIM'S INVENTORY
         </p>
       </div>
-      <div className="grid grid-cols-[repeat(8,_minmax(0,90px))] grid-rows-[1fr] gap-2 p-5">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(0,90px))] grid-rows-[1fr] gap-2 p-5 justify-center">
         {props.items.map((item, index) => {
           if (item != null && item.Type != undefined) {
             return (

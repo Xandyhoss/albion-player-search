@@ -76,7 +76,7 @@ export function KillDetails(props: PropsType) {
               id={event.victimId}
             />
 
-            <div className="w-full flex justify-center col-start-1 col-end-4">
+            <div className="w-full flex justify-center col-start-1 col-end-2 md:col-start-1 md:col-end-4">
               <VictimInventory items={event.victimInventory} />
             </div>
           </div>

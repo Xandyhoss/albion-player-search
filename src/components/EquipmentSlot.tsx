@@ -9,10 +9,13 @@ type PropsType = {
 export function EquipmentSlot(props: PropsType) {
   return (
     <div
-      className={classNames("relative bg-gray-400 flex justify-center items-center", {
-        "col-start-2": props.mount,
-        "col-end-3": props.mount,
-      })}
+      className={classNames(
+        "relative bg-gray-400 flex justify-center items-center",
+        {
+          "col-start-2": props.mount,
+          "col-end-3": props.mount,
+        }
+      )}
     >
       {props.item != null ? (
         <>
