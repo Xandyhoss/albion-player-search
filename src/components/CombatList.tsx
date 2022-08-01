@@ -1,4 +1,4 @@
-import { Skull, Sword } from "phosphor-react";
+import { CaretCircleDoubleRight, Skull, Sword } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
 import { Kill, Death } from "../utils/types";
 
@@ -32,14 +32,20 @@ export function CombatList(props: PropsType) {
               <div
                 key={index}
                 onClick={() => navigate(`/event/${item.eventId}`)}
-                className="bg-white h-10 flex items-center justify-center mb-1 hover:bg-gray-200 transition-colors"
+                className="relative bg-white h-11 flex flex-col items-center justify-center mb-1 hover:bg-gray-200 transition-colors"
               >
                 <p className="text-black text-[1.1rem]">
                   {props.type == "kill"
                     ? (item as Kill).victmin
                     : (item as Death).killer}{" "}
-                  - {item.killFame.toLocaleString("pt-BR")}
                 </p>
+                <p className="text-red-700 font-bold text-[1rem] mt-[-10px]">
+                  {item.killFame.toLocaleString("pt-BR")}
+                </p>
+                <CaretCircleDoubleRight
+                  size={20}
+                  className="text-black absolute right-2"
+                />
               </div>
             );
           })}
