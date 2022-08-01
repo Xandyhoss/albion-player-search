@@ -5,6 +5,7 @@ import { EquipmentInfo } from "./EquipmentInfo";
 import { useEffect, useState } from "react";
 import { AxiosError } from "axios";
 import { Equipment, Event } from "../utils/types";
+import { VictimInventory } from "./VictimInventory";
 
 type PropsType = {
   event: string;
@@ -47,7 +48,7 @@ export function KillDetails(props: PropsType) {
             />
             <p className="text-2xl font-serif">KILL DETAILS</p>
           </div>
-          <div className="grid grid-cols-[1fr] md:grid-cols-[1fr_0.5fr_1fr] grid-rows-1 gap-2 py-3 px-5 w-full md:w-[80%] md:min-w-[850px] md:max-w-[1100px] self-center">
+          <div className="grid grid-cols-[1fr] md:grid-cols-[1fr_0.5fr_1fr] gap-2 py-3 px-5 w-full md:w-[80%] md:min-w-[850px] md:max-w-[1100px] self-center">
             <EquipmentInfo
               type="killer"
               equipment={event?.killerEquipment as Equipment}
@@ -74,6 +75,10 @@ export function KillDetails(props: PropsType) {
               ip={event.victimIp}
               id={event.victimId}
             />
+
+            <div className="w-full flex justify-center col-start-1 col-end-4">
+              <VictimInventory items={event.victimInventory} />
+            </div>
           </div>
         </div>
       )}

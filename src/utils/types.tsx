@@ -15,6 +15,7 @@ interface Death {
 type Item = {
   Type: string;
   Quality: number;
+  Count: number;
 };
 
 type Equipment = {
@@ -41,6 +42,7 @@ interface Event {
   victimIp: number;
   victimId: string;
   victimEquipment: Equipment;
+  victimInventory: Item[];
 }
 
 interface PlayerDetails {

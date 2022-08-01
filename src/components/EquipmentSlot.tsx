@@ -9,15 +9,20 @@ type PropsType = {
 export function EquipmentSlot(props: PropsType) {
   return (
     <div
-      className={classNames("bg-gray-400 flex justify-center items-center", {
+      className={classNames("relative bg-gray-400 flex justify-center items-center", {
         "col-start-2": props.mount,
         "col-end-3": props.mount,
       })}
     >
       {props.item != null ? (
-        <img
-          src={`${renderer}${props.item.Type}.png?quality=${props.item.Quality}`}
-        />
+        <>
+          <div className="absolute right-[18px] bottom-[12px]">
+            {props.item.Count}
+          </div>
+          <img
+            src={`${renderer}${props.item.Type}.png?quality=${props.item.Quality}`}
+          />
+        </>
       ) : (
         "EMPTY"
       )}
